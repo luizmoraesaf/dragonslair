@@ -1,0 +1,67 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-6-tablet is-6-desktop is-6-widescreen is-10-mobile">
+    <form [formGroup]="this.formGroup" (ngSubmit)="this.save()" class="box">
+
+      <div class="field">
+        <label class="label">Nome</label>
+        <div class="control"
+          [ngClass]="{'has-icons-right': this.showWarningToValidateFields(this.formGroup.get('name'))}">
+          <input formControlName="name" class="input" type="text" placeholder="ex: Dragão Negro dos Olhos Vermelhos"
+            [ngClass]="{'is-danger': this.showWarningToValidateFields(this.formGroup.get('name'))}">
+          <span *ngIf="this.showWarningToValidateFields(this.formGroup.get('name'))" class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p *ngIf="this.showWarningToValidateFields(this.formGroup.get('name'))" class="help is-danger">Esse nome é
+          inválido</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Tipo</label>
+        <div class="control"
+          [ngClass]="{'has-icons-right': this.showWarningToValidateFields(this.formGroup.get('type'))}">
+          <input formControlName="type" class="input" type="text" placeholder="ex: Fogo"
+            [ngClass]="{'is-danger': this.showWarningToValidateFields(this.formGroup.get('type'))}">
+          <span *ngIf="this.showWarningToValidateFields(this.formGroup.get('type'))" class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p *ngIf="this.showWarningToValidateFields(this.formGroup.get('type'))" class="help is-danger">Esse tipo é
+          inválido</p>
+      </div>
+
+      <div class="field">
+        <label class="label">História</label>
+        <div class="control">
+          <textarea formControlName="history" class="textarea"
+            placeholder="ex: Este dragão tem origens dos fundos mais obscuros do submundo! Mwa hahaha"></textarea>
+        </div>
+      </div>
+
+      <div *ngIf="this.pageMode === pageModeEnum.Visualize" class="field">
+        <label class="label">Data de Criação</label>
+        <div class="control">
+          <input formControlName="createdAt" class="input" type="text" placeholder="Data de Criação">
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control" *ngIf="this.pageMode !== pageModeEnum.Visualize">
+          <button type="submit" class="button is-success">
+            Salvar
+          </button>
+        </div>
+        <div class="control" *ngIf="this.pageMode === pageModeEnum.Visualize">
+          <button (click)="this.edit()" class="button is-info">
+            Editar
+          </button>
+        </div>
+        <div class="control">
+          <button (click)="this.cancel()" class="button is-link is-light">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
