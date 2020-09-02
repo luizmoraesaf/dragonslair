@@ -23,7 +23,7 @@ para realizar a instalação da versão mais atualizada pode seguir os passos ab
 
 ## Rodando o projeto
 
-Para rodar o projeto basta digitar no cmd `npm start` e acessar no link `http://localhost:8080`.
+Para rodar o projeto basta digitar no cmd `npm run local` e acessar no link `http://localhost:8080`.
 Acessar com o login: `admin@southsystem.com` e senha `senha123`.
 
 ## Organização

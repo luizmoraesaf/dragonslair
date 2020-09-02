@@ -8,24 +8,24 @@ const routes: Routes = [
     {
         path: '',
         redirectTo: 'dragon-list',
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
     },
     {
         path: 'dragon-list',
         component: DragonListComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         pathMatch: 'full'
     },
     {
         path: 'dragon-details',
         component: DragonDetailsComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         pathMatch: 'full'
     },
     {
         path: 'dragon-details/:id',
         component: DragonDetailsComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         pathMatch: 'full'
     }
 ];
