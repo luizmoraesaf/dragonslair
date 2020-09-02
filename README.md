@@ -2,7 +2,7 @@
 
 ## Pré-requisitos
 
-O projeto está publicado no Heroku clicando [aqui]().
+O projeto está publicado no Heroku clicando [aqui](https://dragons-lair-app.herokuapp.com/).
 Precisa ter instalado o angular na versão 10.0.2 ou superior, 
 para realizar a instalação da versão mais atualizada pode seguir os passos abaixo:
 
