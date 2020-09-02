@@ -1,27 +1,46 @@
 # Dragonslair
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+## Pré-requisitos
 
-## Development server
+O projeto está publicado no Heroku clicando [aqui]().
+Precisa ter instalado o angular na versão 10.0.2 ou superior, 
+para realizar a instalação da versão mais atualizada pode seguir os passos abaixo:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Limpando o CLI
+- npm uninstall -g angular-cli          # Remove global package
+- npm uninstall --save-dev angular-cli  # Remove from package.json
 
-## Code scaffolding
+- npm uninstall -g @angular/cli         # Remove global package
+- npm uninstall --save-dev @angular/cli # Remove from package.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Atualizar o NPM
+- npm install npm@latest -g
 
-## Build
+## Reinstalar o CLI atualizado
+- npm install -g @angular/cli                # Global package
+- npm install --save-dev @angular/cli        # Local package
+- npm install                                # Restore removed dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Rodando o projeto
 
-## Running unit tests
+Para rodar o projeto basta digitar no cmd `npm start` e acessar no link `http://localhost:8080`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Organização
 
-## Running end-to-end tests
+O projeto foi organizado seguindo a style guide oficial do [Angular](https://angular.io/guide/styleguide#overall-structural-guidelines).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- `@core`: Onde ficam os serviços compartilhados;
+- `@shared`: São as classes/components etc compartilhados no projeto;
 
-## Further help
+- `dragons`: Pasta principal do módulo de Dragões, subdividida em:
+- `dragon-details`: Componente responsável por exibir, editar e criar novos dragões;
+- `dragon-list`: Componente responsável por exibir a lista de dragões e suas opções;
+- `shared`: São as classes/serviços etc compartilhados neste módulo específico.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- `login`: Componente responsável por realizar o login no sistema.
+
+## O que poderia melhorar?
+
+- Os testes estão como padrão gerados com o CLI, poderiam ser mais completos;
+- Criei um arquivo de animations, mas não tive tempo de implementar as animações de fade na troca de rotas;
+- O serviço de tratamento de erros poderia ser mais completo;
