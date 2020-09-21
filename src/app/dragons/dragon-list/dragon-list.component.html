@@ -1,0 +1,36 @@
+<div class="columns is-mobile is-centered">
+    <div class="column is-6-tablet is-10-desktop is-8-widescreen is-10-mobile">
+        <div class="box">
+            <div class="table-container">
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Ações</th>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Data de Criação</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let dragon of dragons$ | async">
+                        <tr>
+                            <td class="dragon-list-table-row">
+                                <i [routerLink]="['/dragons/dragon-details', dragon.id]"
+                                    class="far fa-eye dragon-list-table-icon" title="Visualizar detalhes do Dragão"></i>
+                                <i (click)="this.deleteDragon(dragon.id)"
+                                    class="far fa-trash-alt dragon-list-table-icon" title="Remover Dragão"></i>
+                            </td>
+                            <td>{{dragon.name}}</td>
+                            <td>{{dragon.type}}</td>
+                            <td>{{dragon.createdAt | date : 'dd/MM/yyyy HH:mm:ss'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="control">
+                <button (click)="this.addDragon()" class="button is-primary">
+                    <span>Novo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

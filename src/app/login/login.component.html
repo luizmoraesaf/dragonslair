@@ -1,0 +1,35 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-6-tablet is-6-desktop is-3-widescreen is-10-mobile">
+    <form [formGroup]="this.formGroup" (ngSubmit)="this.login()" class="box">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left">
+          <input formControlName="email" type="email" placeholder="ex: admin@southsystem.com" class="input"
+            [ngClass]="{'is-danger': this.showWarningToValidateFields(this.formGroup.get('email'))}">
+          <span class="icon is-small is-left">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <p *ngIf="this.showWarningToValidateFields(this.formGroup.get('email'))" class="help is-danger">Esse e-mail é
+            inválido</p>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control has-icons-left">
+          <input formControlName="password" type="password" placeholder="*******" class="input"
+            [ngClass]="{'is-danger': this.showWarningToValidateFields(this.formGroup.get('password'))}">
+          <span class="icon is-small is-left">
+            <i class="fa fa-lock"></i>
+          </span>
+          <p *ngIf="this.showWarningToValidateFields(this.formGroup.get('password'))" class="help is-danger">Essa senha é
+            inválida</p>
+        </div>
+      </div>
+      <div class="field">
+        <button type="submit" class="button is-success">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
